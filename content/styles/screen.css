@@ -33,6 +33,7 @@ body {
     serif;
   font-size: 21px;
   line-height: 1.6;
+  overflow-x: hidden;
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
