@@ -1,0 +1,472 @@
+:root {
+  --accent-fg: #1897ff;
+  --accent-bg: #f8fafb;
+}
+
+a {
+  display: inline-block;
+  color: #1897ff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+a:focus,
+a:focus-within,
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 2px solid #f7b801;
+}
+
+body {
+  margin: 0;
+  background: #f8fafb;
+  color: #333;
+  font-family:
+    "Literata",
+    "Literata 12pt",
+    Georgia,
+    'Times New Roman',
+    Times,
+    serif;
+  font-size: 21px;
+  line-height: 1.6;
+  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body header {
+  background: #f8fafb;
+  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body header a {
+  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent *::selection {
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+}
+
+body.has-accent header {
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent header a {
+  color: var(--accent-fg);
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent header *::selection {
+  background: var(--accent-fg);
+  color: var(--accent-bg);
+}
+
+body.has-accent .menu-bar-logo-petals {
+  fill: var(--accent-fg);
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent .menu-bar-logo-ring {
+  fill: var(--accent-bg);
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent .menu-bar-logo-centre {
+  fill: var(--accent-fg);
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+figure > img {
+  width: inherit;
+  height: auto;
+  border-radius: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Suisse Intl",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    Verdana,
+    sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 260%;
+}
+
+h2 {
+  font-size: 230%;
+}
+
+h3 {
+  font-size: 200%;
+}
+
+h4 {
+  font-size: 180%;
+}
+
+h5 {
+  font-size: 140%;
+}
+
+h6 {
+  font-size: 100%;
+}
+
+main {
+  padding-bottom: 60px;
+}
+
+main > * {
+  max-width: 960px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+main > *:first-child {
+  margin-top: 0;
+}
+
+main > h1,
+main > h2,
+main > h3,
+main > h4,
+main > h5,
+main > h6 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+main > figure {
+  position: relative;
+  width: 960px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+main > figure figcaption {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  max-width: 300px;
+  margin-top: 40px;
+  color: #1897ff;
+}
+
+main > figure figcaption::before {
+  position: absolute;
+  left: -1em;
+  content: '↑ ';
+}
+
+main > figure + p {
+  position: relative;
+  left: -160px;
+  max-width: 640px;
+}
+
+main > figure.full-width {
+  width: 100vw;
+  max-width: 100%;
+  margin: 40px -20px;
+}
+
+main > figure.full-width + p {
+  position: static;
+  max-width: 960px;
+}
+
+main > figure.full-width img {
+  border-radius: 0;
+}
+
+.article-meta {
+  padding-bottom: 40px;
+  margin-top: -50px;
+  margin-bottom: 40px;
+  font-family:
+    "Suisse Intl",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    Verdana,
+    sans-serif;
+}
+
+.article-tags {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 0 10px;
+  list-style: none;
+}
+
+.article-tag {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.article-tag::before {
+  margin-right: 2px;
+  content: "#";
+}
+
+.article-title {
+  margin-top: 0;
+  margin-bottom: 60px;
+  font-size: 260%;
+}
+
+.gallery {
+  max-width: 100%;
+  padding: 0 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 0;
+}
+
+.gallery-row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.gallery-row > figure {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  margin: 0;
+}
+
+.intro-text {
+  font-family:
+    "Suisse Intl",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    Verdana,
+    sans-serif;
+  font-size: 140%;
+}
+
+.list-view {
+  position: relative;
+  z-index: 10;
+  max-width: 960px;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: auto;
+  list-style: none;
+}
+
+.list-view-card {
+  position: relative;
+  display: inline-block;
+  color: var(--accent-fg);
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card.has-thumbnail {
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card.has-thumbnail a {
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card a {
+  color: var(--accent-fg);
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card .article-meta {
+  padding-bottom: 0;
+  margin-bottom: 40px;
+}
+
+.list-view-card-thumbnail {
+  position: fixed;
+  z-index: -1;
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card.has-thumbnail:hover {
+  text-shadow: 1px 1px 0 var(--accent-bg), -1px -1px 0 var(--accent-bg), -1px 1px 0 var(--accent-bg), 1px -1px 0 var(--accent-bg);
+  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card.has-thumbnail:hover .list-view-card-thumbnail {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.menu-bar {
+  display: flex;
+  max-width: 960px;
+  align-items: center;
+  padding: 40px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family:
+    "Suisse Intl",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    Verdana,
+    sans-serif;
+  font-size: 100%;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.menu-bar-element {
+  margin-left: 6px;
+}
+
+.menu-bar-element:first-child {
+  margin-left: 0;
+}
+
+.menu-bar-current {
+  overflow: hidden;
+  flex-shrink: 4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-bar-logo {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.menu-bar-logo > svg {
+  width: inherit;
+}
+
+.menu-bar-logo-petals {
+  fill: #f35b04;
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.menu-bar-logo-ring {
+  fill: #f7b801;
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.menu-bar-logo-centre {
+  fill: #3d348b;
+  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.menu-bar-logo:focus .menu-bar-logo-petals,
+.menu-bar-logo:focus-within .menu-bar-logo-petals,
+.menu-bar-logo:hover .menu-bar-logo-petals {
+  fill: #f35b04;
+}
+
+.menu-bar-logo:focus .menu-bar-logo-ring,
+.menu-bar-logo:focus-within .menu-bar-logo-ring,
+.menu-bar-logo:hover .menu-bar-logo-ring {
+  fill: #f7b801;
+}
+
+.menu-bar-logo:focus .menu-bar-logo-centre,
+.menu-bar-logo:focus-within .menu-bar-logo-centre,
+.menu-bar-logo:hover .menu-bar-logo-centre {
+  fill: #3d348b;
+}
+
+.page-header {
+  max-width: 960px;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 1110px) {
+  .list-view-card-thumbnail {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  main > figure {
+    width: 100vw;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  main > figure figcaption {
+    position: static;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  main > figure figcaption::before {
+    position: static;
+  }
+
+  main > figure + p {
+    position: static;
+    max-width: 960px;
+  }
+
+  .gallery {
+    padding: 0;
+  }
+
+  .gallery-row {
+    display: block;
+  }
+
+  .gallery-row > figure {
+    width: 100vw;
+    padding: 0 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #151515;
+    color: #f8fafb;
+  }
+}

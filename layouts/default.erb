@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-CA">
+
+<head>
+  <%= render("/parts/head.*", { config: @config, item: @item }) %>
+</head>
+
+<body
+  <% if @item[:accentFg] or @item[:accentBg] %>
+  class="has-accent"
+  style="--accent-fg: <%= @item[:accentFg] || "#3d348b" %>;
+         --accent-bg: <%= @item[:accentBg] || "#f7b801" %>;"
+  <% end %>>
+  <header>
+    <%= render("/parts/menu-bar.*", { config: @config, item: @item }) %>
+    <% if page?(@item) or post?(@item) %>
+    <div class="page-header">
+      <h1 class="article-title"><%= @item[:title] %></h1>
+      <% if item[:date] or item[:tags] %>
+      <div class="article-meta">
+        <% if item[:date] %> 
+        <span class="article-time">
+          <time datetime="<%= item[:date] %>"><%= format_time(item[:date], "%d %b, %Y") %></time>
+        </span>
+        <% end %>
+        <% if item[:tags] %> 
+        <ul class="article-tags">
+          <% item[:tags].each do |tag| %>
+            <li class="article-tag"><a href="<%= @config[:base_url] %>/tags/<%= tag.downcase %>"><%= tag %></a></li>
+          <% end %>
+        </ul>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+  <% if not page?(@item) and not post?(@item) %>
+  <script src="<%= @config[:base_url] %>/scripts/list-themer.js"></script>
+  <% end %>
+</body>
+
+</html>

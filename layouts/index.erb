@@ -1,0 +1,40 @@
+<% render "/default.*" do %>
+<ul class="list-view">
+  <li class="list-view-entry">
+    <div class="list-view-card">
+      <div class="list-view-card-text">
+        <h2 class="article-title">
+          <a href="<%= @config[:base_url] %>/posts">Posts</a>
+        </h2>
+      </div>
+    </div>
+  </li>
+  <li class="list-view-entry">
+    <div class="list-view-card">
+      <div class="list-view-card-text">
+        <h2 class="article-title">
+          <a href="<%= @config[:base_url] %>/work">Work</a>
+        </h2>
+      </div>
+    </div>
+  </li>
+  <li class="list-view-entry">
+    <div class="list-view-card">
+      <div class="list-view-card-text">
+        <h2 class="article-title">
+          <a href="<%= @config[:base_url] %>/about">About</a>
+        </h2>
+      </div>
+    </div>
+  </li>
+  <li class="list-view-entry">
+    <div class="list-view-card">
+      <div class="list-view-card-text">
+        <h2 class="article-title">
+          <a href="<%= @config[:base_url] %>/contact">Contact</a>
+        </h2>
+      </div>
+    </div>
+  </li>
+</ul>
+<% end %>

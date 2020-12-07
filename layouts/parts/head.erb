@@ -1,0 +1,35 @@
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content="<%= excerptize(strip_html(@item.compiled_content), length: 250) %>" />
+<meta name="author" content="<%= @config[:creator] %> &lt;<%= @config[:creator_email] %>&gt;" />
+<meta name="developer" content="<%= @config[:creator] %> &lt;<%= @config[:creator_email] %>&gt;" />
+<meta name="designer" content="<%= @config[:creator] %> &lt;<%= @config[:creator_email] %>&gt;" />
+<meta name="generator" content="Nanoc <%= Nanoc::VERSION %>" />
+
+<meta property="og:locale" content="en_CA" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="<%= @config[:title] %>" />
+<meta property="og:url" content="<%= @config[:base_url] %><%= @item.path %>" />
+<meta property="og:title" content="<%= @item[:title] %>" />
+<meta property="og:description" content="<%= excerptize(strip_html(@item.compiled_content), length: 250) %>" />
+<% if @item[:thumbnail] %>
+<meta property="og:image" content="<%= @config[:base_url] %><%= @item.path %><%= @item[:thumbnail] %>" />
+<% end %>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="<%= @config[:creator_twitter] %>" />
+<meta name="twitter:creator" content="<%= @config[:creator_twitter] %>" />
+<% if @item[:thumbnail] %>
+<meta name="twitter:image:src" content="<%= @config[:base_url] %><%= @item.path %><%= @item[:thumbnail] %>" />
+<% end %>
+
+<link rel="apple-touch-icon" sizes="180x180" href="<%= @config[:base_url] %>/icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="<%= @config[:base_url] %>/icons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="<%= @config[:base_url] %>/icons/favicon-16x16.png" />
+
+<title><%= @item[:title] %></title>
+
+<link rel="stylesheet" href="<%= @config[:base_url] %>/styles/fonts.css">
+<link rel="stylesheet" href="<%= @config[:base_url] %>/styles/screen.css">

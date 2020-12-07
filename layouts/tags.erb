@@ -1,0 +1,13 @@
+<% render "/default.*" do %>
+<ul class="list-view">
+  <% tags.each do |item| %>
+  <li class="list-view-entry">
+    <div class="list-view-card">
+      <div class="list-view-card-text">
+        <h2 class="article-title"><a href="<%= @config[:base_url] %>/tags/<%= item.downcase %>"><%= item %></a></h2>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>

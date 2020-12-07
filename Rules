@@ -1,0 +1,90 @@
+#!/usr/bin/env ruby
+
+require "set"
+
+# Preprocessing
+
+preprocess do
+  tags = Set.new
+  @items.each do |item|
+    if item[:tags]
+      item[:tags].each { |tag| tags.add(tag) }
+    end
+  end
+  tags.each do |tag|
+    @items.create("", { title: "Tag: #{tag}", draft: false, tag: tag }, "/tags/#{tag.downcase}")
+  end
+
+  @items.create("", { title: "Teng Liu does design, software development, and writing", draft: false }, "/index")
+  @items.create("", { title: "Teng Liu's writing on design, software, and other things", draft: false, category: "posts" }, "/posts")
+  @items.create("", { title: "Teng Liu's work on design, and software", draft: false, category: "work" }, "/work")
+  @items.create("", { title: "Tags", draft: false }, "/tags")
+end
+
+# Index
+
+compile "/index" do
+  layout "/index.*"
+  write "#{item.identifier.without_ext}.html"
+end
+
+# Categories
+
+compile "/posts" do
+  layout "/category.*"
+  write "#{item.identifier.without_ext}/index.html"
+end
+
+compile "/work" do
+  layout "/category.*"
+  write "#{item.identifier.without_ext}/index.html"
+end
+
+# Tags
+
+compile "/tags" do
+  filter :erb
+  layout "/tags.*"
+  write "#{item.identifier.without_ext}/index.html"
+end
+
+compile "/tags/*" do
+  layout "/tag.*"
+  write "#{item.identifier.without_ext}/index.html"
+end
+
+# Content
+
+compile "/**/*.erb" do
+  filter :erb
+  layout "/default.*"
+
+  if item.identifier =~ "**/index.*"
+    write "#{item.identifier.without_ext}.html"
+  else
+    write "#{item.identifier.without_ext}/index.html"
+  end
+end
+
+compile "/**/*.md" do
+  filter :pandoc, args: [
+                    { from: "markdown+smart+raw_html", to: :html },
+                  ]
+  layout "/default.*"
+
+  if !item[:draft]
+    if item.identifier =~ "**/index.*"
+      write "#{item.identifier.without_ext}.html"
+    else
+      write "#{item.identifier.without_ext}/index.html"
+    end
+  end
+end
+
+compile "/**/*" do
+  write item.identifier.to_s
+end
+
+# Layouts
+
+layout "/**/*", :erb

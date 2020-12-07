@@ -1,0 +1,3 @@
+<% render "/default.*" do %>
+  <%= render("/parts/list-view.*", { config: @config, items: sorted_posts_with_tag(@item[:tag]) }) %>
+<% end %>

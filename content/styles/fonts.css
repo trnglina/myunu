@@ -1,0 +1,83 @@
+@font-face {
+  font-display: swap;
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url("/fonts/SuisseIntl-Book-WebS.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Book-WebS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Suisse Intl";
+  font-style: italic;
+  font-weight: 500;
+  src:
+    url("/fonts/SuisseIntl-BookItalic-WebS.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-BookItalic-WebS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("/fonts/SuisseIntl-Bold-WebS.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Bold-WebS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Suisse Intl";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url("/fonts/SuisseIntl-BoldItalic-WebS.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-BoldItalic-WebS.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Literata";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/fonts/Literata12pt-Regular.ttf") format("truetype"),
+    url("/fonts/Literata12pt-Regular.woff2") format("woff2"),
+    url("/fonts/Literata12pt-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Literata";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url("/fonts/Literata12pt-Italic.ttf") format("truetype"),
+    url("/fonts/Literata12pt-Italic.woff2") format("woff2"),
+    url("/fonts/Literata12pt-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Literata";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("/fonts/Literata12pt-Bold.ttf") format("truetype"),
+    url("/fonts/Literata12pt-Bold.woff2") format("woff2"),
+    url("/fonts/Literata12pt-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Literata";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url("/fonts/Literata12pt-BoldItalic.ttf") format("truetype"),
+    url("/fonts/Literata12pt-BoldItalic.woff2") format("woff2"),
+    url("/fonts/Literata12pt-BoldItalic.woff") format("woff");
+}
