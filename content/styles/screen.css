@@ -33,7 +33,6 @@ body {
     serif;
   font-size: 21px;
   line-height: 1.6;
-  overflow-x: hidden;
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
@@ -130,6 +129,7 @@ h6 {
 
 main {
   padding-bottom: 60px;
+  overflow-x: hidden;
 }
 
 main > * {
@@ -177,6 +177,13 @@ main > figure figcaption::before {
   position: absolute;
   left: -1em;
   content: '↑ ';
+  font-family:
+    "Suisse Intl",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    Verdana,
+    sans-serif;
 }
 
 main > figure + p {
@@ -428,6 +435,10 @@ main > figure.full-width img {
     margin-left: -20px;
   }
 
+  main > figure img {
+    border-radius: 0;
+  }
+
   main > figure figcaption {
     position: static;
     max-width: 100%;
@@ -469,5 +480,10 @@ main > figure.full-width img {
   body {
     background: #151515;
     color: #f8fafb;
+  }
+
+  body header {
+    background: #151515;
+    transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
   }
 }

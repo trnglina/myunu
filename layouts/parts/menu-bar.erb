@@ -11,11 +11,11 @@
     </svg>
   </a>
   <% breadcrumb(@item)[0...-1].each do |entry| %>
-  <span class="menu-bar-element menu-bar-separator">🡒</span>
+  <span class="menu-bar-element menu-bar-separator">→</span>
   <a class="menu-bar-element" href="<%= @config[:base_url] %><%= entry[:trail] %>"><%= entry[:label] %></a>
   <% end %>
   <% if breadcrumb(@item)[-1] %>
-  <span class="menu-bar-element menu-bar-separator">🡒</span>
+  <span class="menu-bar-element menu-bar-separator">→</span>
   <span class="menu-bar-element menu-bar-current"><%= breadcrumb(@item)[-1][:label] %></span>
   <% end %>
 </nav>

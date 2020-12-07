@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 500;
   src:
-    url("/fonts/SuisseIntl-Book-WebS.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-Book-WebS.woff") format("woff");
+    url("/fonts/SuisseIntl-Book.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Book.woff") format("woff");
 }
 
 @font-face {
@@ -14,8 +14,8 @@
   font-style: italic;
   font-weight: 500;
   src:
-    url("/fonts/SuisseIntl-BookItalic-WebS.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-BookItalic-WebS.woff") format("woff");
+    url("/fonts/SuisseIntl-BookItalic.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-BookItalic.woff") format("woff");
 }
 
 @font-face {
@@ -24,8 +24,8 @@
   font-style: normal;
   font-weight: 700;
   src:
-    url("/fonts/SuisseIntl-Bold-WebS.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-Bold-WebS.woff") format("woff");
+    url("/fonts/SuisseIntl-Bold.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -34,8 +34,8 @@
   font-style: italic;
   font-weight: 700;
   src:
-    url("/fonts/SuisseIntl-BoldItalic-WebS.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-BoldItalic-WebS.woff") format("woff");
+    url("/fonts/SuisseIntl-BoldItalic.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-BoldItalic.woff") format("woff");
 }
 
 @font-face {
