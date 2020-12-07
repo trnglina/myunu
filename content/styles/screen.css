@@ -16,10 +16,6 @@ a:hover {
   text-decoration: none;
 }
 
-a:focus {
-  outline: 2px solid #f7b801;
-}
-
 body {
   margin: 0;
   background: #f8fafb;
