@@ -22,7 +22,7 @@ module Myunu
       entries = Array.new
       path = Array.new
       item.path.split("/").each do |entry|
-        if entry != "" && entry != "index.xhtml"
+        if entry != "" && entry != "index.html" && entry != "index.xhtml"
           path << entry
           entry_item = @items["/#{path.join("/")}.*"] || @items["/#{path.join("/")}/index.*"]
           entries << { label: if entry_item then entry_item[:title] else entry.capitalize end, trail: "/#{path.join("/")}" }
