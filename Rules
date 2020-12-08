@@ -25,19 +25,19 @@ end
 
 compile "/index" do
   layout "/index.*"
-  write "#{item.identifier.without_ext}.html"
+  write "#{item.identifier.without_ext}.xhtml"
 end
 
 # Categories
 
 compile "/posts" do
   layout "/category.*"
-  write "#{item.identifier.without_ext}/index.html"
+  write "#{item.identifier.without_ext}/index.xhtml"
 end
 
 compile "/work" do
   layout "/category.*"
-  write "#{item.identifier.without_ext}/index.html"
+  write "#{item.identifier.without_ext}/index.xhtml"
 end
 
 # Tags
@@ -45,12 +45,12 @@ end
 compile "/tags" do
   filter :erb
   layout "/tags.*"
-  write "#{item.identifier.without_ext}/index.html"
+  write "#{item.identifier.without_ext}/index.xhtml"
 end
 
 compile "/tags/*" do
   layout "/tag.*"
-  write "#{item.identifier.without_ext}/index.html"
+  write "#{item.identifier.without_ext}/index.xhtml"
 end
 
 # Content
@@ -60,23 +60,23 @@ compile "/**/*.erb" do
   layout "/default.*"
 
   if item.identifier =~ "**/index.*"
-    write "#{item.identifier.without_ext}.html"
+    write "#{item.identifier.without_ext}.xhtml"
   else
-    write "#{item.identifier.without_ext}/index.html"
+    write "#{item.identifier.without_ext}/index.xhtml"
   end
 end
 
 compile "/**/*.md" do
   filter :pandoc, args: [
-                    { from: "markdown+smart+raw_html", to: :html },
+                    { from: "markdown+smart+raw_html", to: :html5 },
                   ]
   layout "/default.*"
 
   if !item[:draft]
     if item.identifier =~ "**/index.*"
-      write "#{item.identifier.without_ext}.html"
+      write "#{item.identifier.without_ext}.xhtml"
     else
-      write "#{item.identifier.without_ext}/index.html"
+      write "#{item.identifier.without_ext}/index.xhtml"
     end
   end
 end
