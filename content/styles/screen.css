@@ -16,6 +16,11 @@ a:hover {
   text-decoration: none;
 }
 
+abbr {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
 body {
   margin: 0;
   background: #f8fafb;
