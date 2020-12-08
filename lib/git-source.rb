@@ -7,7 +7,7 @@ class GitSource < Nanoc::DataSources::Filesystem
     begin
       @git = if File.directory?(self.content_dir_name)
           begin
-            g = Git.open(self.content_dir_name, :log => self.logger)
+            g = Git.open(self.content_dir_name)
             g.pull
             g
           rescue ArgumentError
