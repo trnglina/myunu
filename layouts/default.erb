@@ -41,6 +41,9 @@
   <% if not page?(@item) and not post?(@item) %>
   <script src="<%= permalink("/scripts/list-themer.js") %>"></script>
   <% end %>
+  <% if page?(@item) or post?(@item) %>
+  <script src="<%= permalink("/scripts/abbr-helper.js") %>"></script>
+  <% end %>
 </body>
 
 </html>

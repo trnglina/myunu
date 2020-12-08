@@ -1,5 +1,5 @@
 (() => {
-  const body = document.getElementsByTagName("body")[0];
+  const body = document.querySelector("body");
 
   const listPaint = (b) => {
     const fg = b.getAttribute("data-accent-fg");
@@ -27,7 +27,7 @@
     }
   };
 
-  const cards = document.getElementsByClassName("list-view-card");
+  const cards = document.querySelectorAll(".list-view-card");
 
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("mouseenter", (e) => {

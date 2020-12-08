@@ -3,20 +3,26 @@
   --accent-bg: #f8fafb;
 }
 
-a {
+a[href] {
   display: inline-block;
   color: #1897ff;
+  text-decoration-style: solid;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
 }
 
-a:focus,
-a:focus-within,
-a:hover {
+a[href]:focus,
+a[href]:focus-within,
+a[href]:hover {
   text-decoration: none;
 }
 
-abbr {
+abbr[title] {
+  position: relative;
+  cursor: help;
+  font-size: 90%;
+  font-variant: small-caps;
+  text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
 }
@@ -42,7 +48,7 @@ body header {
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body header a {
+body header a[href] {
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
@@ -52,8 +58,8 @@ body.list-accent header {
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent header a,
-body.list-accent header a {
+body.has-accent header a[href],
+body.list-accent header a[href] {
   color: var(--accent-fg);
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -307,11 +313,11 @@ main > figure.full-width img {
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.3s cubic-bezier(0.83, 0, 0.17, 1), z-index 0.3s cubic-bezier(0, 1, 1, 0);
 }
 
-.list-view-card.has-thumbnail a {
+.list-view-card.has-thumbnail a[href] {
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-.list-view-card a {
+.list-view-card a[href] {
   color: var(--accent-fg);
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
