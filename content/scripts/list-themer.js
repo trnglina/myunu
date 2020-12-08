@@ -1,13 +1,14 @@
 (function () {
-  const cards = document.getElementsByClassName("list-view-card");
-  const body = document.body;
+  const body = document.getElementsByTagName("body")[0];
 
-  const paint = function (basis) {
-    let fg = basis.dataset.accentFg;
-    let bg = basis.dataset.accentBg;
+  const listPaint = (b) => {
+    const fg = b.getAttribute("data-accent-fg");
+    const bg = b.getAttribute("data-accent-bg");
+
     if (fg) {
       body.style.setProperty("--accent-fg", fg);
     }
+
     if (bg) {
       if (!body.classList.contains("has-accent")) {
         body.classList.add("has-accent");
@@ -17,7 +18,7 @@
     }
   };
 
-  const clear = function () {
+  const listClear = () => {
     body.style.removeProperty("--accent-fg");
     body.style.removeProperty("--accent-bg");
     body.style.background = "";
@@ -26,10 +27,12 @@
     }
   };
 
+  const cards = document.getElementsByClassName("list-view-card");
+
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("mouseenter", function (e) {
-      paint(cards[i]);
+      listPaint(e.target);
     });
-    cards[i].addEventListener("mouseleave", clear);
+    cards[i].addEventListener("mouseleave", listClear);
   }
 })();
