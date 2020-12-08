@@ -1,4 +1,4 @@
-(function () {
+(() => {
   const body = document.getElementsByTagName("body")[0];
 
   const listPaint = (b) => {
@@ -30,7 +30,7 @@
   const cards = document.getElementsByClassName("list-view-card");
 
   for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("mouseenter", function (e) {
+    cards[i].addEventListener("mouseenter", (e) => {
       listPaint(e.target);
     });
     cards[i].addEventListener("mouseleave", listClear);
