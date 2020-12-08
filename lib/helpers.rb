@@ -18,6 +18,10 @@ module Myunu
       Time.parse(original).strftime(into)
     end
 
+    def permalink(to)
+      "#{@config[:base_url]}#{to}".gsub("index.html", "").gsub("index.xhtml", "")
+    end
+
     def breadcrumb(item)
       entries = Array.new
       path = Array.new

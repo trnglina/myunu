@@ -11,25 +11,25 @@
 <meta property="og:locale" content="en_CA" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="<%= @config[:title] %>" />
-<meta property="og:url" content="<%= @config[:base_url] %><%= @item.path %>" />
+<meta property="og:url" content="<%= permalink(@item.path) %>" />
 <meta property="og:title" content="<%= @item[:title] %>" />
 <meta property="og:description" content="<%= excerptize(strip_html(@item.compiled_content), length: 250) %>" />
 <% if @item[:thumbnail] %>
-<meta property="og:image" content="<%= @config[:base_url] %><%= @item.path %><%= @item[:thumbnail] %>" />
+<meta property="og:image" content="<%= permalink("#{@item.path}#{@item[:thumbnail]}") %>" />
 <% end %>
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="<%= @config[:creator_twitter] %>" />
 <meta name="twitter:creator" content="<%= @config[:creator_twitter] %>" />
 <% if @item[:thumbnail] %>
-<meta name="twitter:image:src" content="<%= @config[:base_url] %><%= @item.path %><%= @item[:thumbnail] %>" />
+<meta name="twitter:image:src" content="<%= permalink("#{@item.path}#{@item[:thumbnail]}") %>" />
 <% end %>
 
-<link rel="apple-touch-icon" sizes="180x180" href="<%= @config[:base_url] %>/icons/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="<%= @config[:base_url] %>/icons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="<%= @config[:base_url] %>/icons/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="<%= permalink("/icons/apple-touch-icon.png") %>" />
+<link rel="icon" type="image/png" sizes="32x32" href="<%= permalink("/icons/favicon-32x32.png") %>" />
+<link rel="icon" type="image/png" sizes="16x16" href="<%= permalink("/icons/favicon-16x16.png") %>" />
 
 <title><%= @item[:title] %></title>
 
-<link rel="stylesheet" href="<%= @config[:base_url] %>/styles/fonts.css" />
-<link rel="stylesheet" href="<%= @config[:base_url] %>/styles/screen.css" />
+<link rel="stylesheet" href="<%= permalink("/styles/fonts.css") %>" />
+<link rel="stylesheet" href="<%= permalink("/styles/screen.css") %>" />
