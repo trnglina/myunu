@@ -10,8 +10,8 @@
     }
 
     if (bg) {
-      if (!body.classList.contains("has-accent")) {
-        body.classList.add("has-accent");
+      if (!body.classList.contains("list-accent")) {
+        body.classList.add("list-accent");
       }
       body.style.setProperty("--accent-bg", bg);
       body.style.background = bg;
@@ -22,8 +22,8 @@
     body.style.removeProperty("--accent-fg");
     body.style.removeProperty("--accent-bg");
     body.style.background = "";
-    if (body.classList.contains("has-accent")) {
-      body.classList.remove("has-accent");
+    if (body.classList.contains("list-accent")) {
+      body.classList.remove("list-accent");
     }
   };
 

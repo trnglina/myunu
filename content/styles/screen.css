@@ -38,7 +38,7 @@ body {
 }
 
 body header {
-  background: #f8fafb;
+  background: transparent;
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
@@ -46,18 +46,14 @@ body header a {
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent *::selection {
-  background: var(--accent-bg);
-  color: var(--accent-fg);
-}
-
-body.has-accent header {
-  background: var(--accent-bg);
+body.has-accent header,
+body.list-accent header {
   color: var(--accent-fg);
   transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent header a {
+body.has-accent header a,
+body.list-accent header a {
   color: var(--accent-fg);
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -67,19 +63,31 @@ body.has-accent header *::selection {
   color: var(--accent-bg);
 }
 
-body.has-accent .menu-bar-logo-petals {
+body.has-accent .menu-bar-logo-petals,
+body.list-accent .menu-bar-logo-petals {
   fill: var(--accent-fg);
   transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent .menu-bar-logo-ring {
+body.has-accent .menu-bar-logo-ring,
+body.list-accent .menu-bar-logo-ring {
   fill: var(--accent-bg);
   transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent .menu-bar-logo-centre {
+body.has-accent .menu-bar-logo-centre,
+body.list-accent .menu-bar-logo-centre {
   fill: var(--accent-fg);
   transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+body.has-accent *::selection {
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+}
+
+body.has-accent header {
+  background: var(--accent-bg);
 }
 
 figure > img {
@@ -209,9 +217,6 @@ main > figure.full-width img {
 }
 
 .article-meta {
-  padding-bottom: 40px;
-  margin-top: -30px;
-  margin-bottom: 40px;
   font-family:
     "Suisse Intl",
     "Helvetica Neue",
@@ -240,8 +245,12 @@ main > figure.full-width img {
 
 .article-title {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 0;
   font-size: 260%;
+}
+
+.article-title + .article-meta {
+  margin-top: 6px;
 }
 
 .gallery {
@@ -289,6 +298,7 @@ main > figure.full-width img {
   position: relative;
   z-index: 10;
   display: inline-block;
+  margin-bottom: 40px;
   color: var(--accent-fg);
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -304,11 +314,6 @@ main > figure.full-width img {
 .list-view-card a {
   color: var(--accent-fg);
   transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
-}
-
-.list-view-card .article-meta {
-  padding-bottom: 0;
-  margin-bottom: 40px;
 }
 
 .list-view-card-thumbnail {
@@ -354,7 +359,6 @@ main > figure.full-width img {
     Verdana,
     sans-serif;
   font-size: 100%;
-  font-weight: 500;
   text-transform: lowercase;
 }
 
@@ -420,8 +424,9 @@ main > figure.full-width img {
 
 .page-header {
   max-width: 960px;
-  padding: 0 20px;
+  padding: 0 20px 40px 20px;
   margin-right: auto;
+  margin-bottom: 40px;
   margin-left: auto;
   text-align: center;
 }
@@ -488,10 +493,5 @@ main > figure.full-width img {
   body {
     background: #151515;
     color: #f8fafb;
-  }
-
-  body header {
-    background: #151515;
-    transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
   }
 }
