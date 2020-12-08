@@ -225,10 +225,8 @@ main > figure.full-width img {
 }
 
 .abbr-expansion {
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
+  font-size: 110%;
+  font-variant: normal;
 }
 
 .article-meta {

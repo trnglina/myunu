@@ -7,7 +7,7 @@
       const exp = document.createElement("span");
       exp.innerHTML = ` (${abbr.getAttribute("title")})`;
       exp.className = "abbr-expansion";
-      abbr.parentNode.insertBefore(exp, abbr.nextSibling);
+      abbr.appendChild(exp);
       expanded.push(abbr.innerHTML);
     }
   }
