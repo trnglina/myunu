@@ -16,16 +16,16 @@
     <% if page?(@item) or post?(@item) %>
     <div class="page-header">
       <h1 class="article-title"><%= @item[:title] %></h1>
-      <% if item[:date] or item[:tags] %>
+      <% if @item[:date] or @item[:tags] %>
       <div class="article-meta">
-        <% if item[:date] %> 
+        <% if @item[:date] %> 
         <span class="article-time">
-          <time datetime="<%= item[:date] %>"><%= format_time(item[:date], "%d %b, %Y") %></time>
+          <time datetime="<%= @item[:date] %>"><%= format_time(@item[:date], "%d %b, %Y") %></time>
         </span>
         <% end %>
-        <% if item[:tags] %> 
+        <% if @item[:tags] %> 
         <ul class="article-tags">
-          <% item[:tags].each do |tag| %>
+          <% @item[:tags].each do |tag| %>
             <li class="article-tag"><a href="<%= permalink("/tags/#{tag.downcase}/") %>"><%= tag %></a></li>
           <% end %>
         </ul>

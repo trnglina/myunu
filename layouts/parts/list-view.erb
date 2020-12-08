@@ -29,7 +29,7 @@
       <% if item[:thumbnail] %>
       <div class="list-view-card-thumbnail"
           aria-hidden="true"
-          style="background-image: url(<%= permalink("#{@item.path}#{@item[:thumbnail]}") %>)"></div>
+          style="background-image: url(<%= permalink("#{item.path}#{item[:thumbnail]}") %>)"></div>
       <% end %>
     </div>
   </li>
