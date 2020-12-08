@@ -6,6 +6,7 @@
 a[href] {
   display: inline-block;
   color: #1897ff;
+  text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
@@ -22,6 +23,7 @@ abbr[title] {
   cursor: help;
   font-size: 90%;
   font-variant: small-caps;
+  text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
@@ -220,6 +222,13 @@ main > figure.full-width + p {
 
 main > figure.full-width img {
   border-radius: 0;
+}
+
+.abbr-expansion {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
 .article-meta {

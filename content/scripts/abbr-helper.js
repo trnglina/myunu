@@ -6,6 +6,7 @@
     if (!expanded.includes(abbr.innerHTML)) {
       const exp = document.createElement("span");
       exp.innerHTML = ` (${abbr.getAttribute("title")})`;
+      exp.className = "abbr-expansion";
       abbr.parentNode.insertBefore(exp, abbr.nextSibling);
       expanded.push(abbr.innerHTML);
     }
