@@ -386,14 +386,14 @@ body > main figure.full-width img {
   transition: opacity 0.5s cubic-bezier(0.83, 0, 0.17, 1), transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-.list-view-entry:first-child .list-view-card-thumbnail {
-  top: -100px;
-  bottom: -160px;
-}
-
 .list-view-entry:last-child .list-view-card-thumbnail {
   top: -220px;
   bottom: -40px;
+}
+
+.list-view-entry:first-child .list-view-card-thumbnail {
+  top: -100px;
+  bottom: -160px;
 }
 
 .menu-bar {
