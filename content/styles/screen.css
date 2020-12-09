@@ -42,31 +42,31 @@ body {
     serif;
   font-size: 21px;
   line-height: 1.6;
-  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: background 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body header {
+body > header {
   background: transparent;
-  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: background 0.5s cubic-bezier(0.83, 0, 0.17, 1), color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body header a[href] {
-  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+body > header a[href] {
+  transition: background 0.5s cubic-bezier(0.83, 0, 0.17, 1), color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent header,
-body.list-accent header {
+body.has-accent > header,
+body.list-accent > header {
   color: var(--accent-fg);
-  transition: background 0.3s cubic-bezier(0.83, 0, 0.17, 1), color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: background 0.5s cubic-bezier(0.83, 0, 0.17, 1), color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent header a[href],
-body.list-accent header a[href] {
+body.has-accent > header a[href],
+body.list-accent > header a[href] {
   color: var(--accent-fg);
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-body.has-accent header *::selection {
+body.has-accent > header *::selection {
   background: var(--accent-fg);
   color: var(--accent-bg);
 }
@@ -74,19 +74,19 @@ body.has-accent header *::selection {
 body.has-accent .menu-bar-logo-petals,
 body.list-accent .menu-bar-logo-petals {
   fill: var(--accent-fg);
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 body.has-accent .menu-bar-logo-ring,
 body.list-accent .menu-bar-logo-ring {
   fill: var(--accent-bg);
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 body.has-accent .menu-bar-logo-centre,
 body.list-accent .menu-bar-logo-centre {
   fill: var(--accent-fg);
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 body.has-accent *::selection {
@@ -94,7 +94,7 @@ body.has-accent *::selection {
   color: var(--accent-fg);
 }
 
-body.has-accent header {
+body.has-accent > header {
   background: var(--accent-bg);
 }
 
@@ -144,12 +144,15 @@ h6 {
   font-size: 100%;
 }
 
-main {
+body > main {
   padding-bottom: 60px;
+}
+
+body > main.article {
   overflow-x: hidden;
 }
 
-main > * {
+body > main > * {
   max-width: 960px;
   padding-right: 20px;
   padding-left: 20px;
@@ -159,29 +162,29 @@ main > * {
   margin-left: auto;
 }
 
-main > *:first-child {
+body > main > *:first-child {
   margin-top: 0;
 }
 
-main > h1,
-main > h2,
-main > h3,
-main > h4,
-main > h5,
-main > h6 {
+body > main > h1,
+body > main > h2,
+body > main > h3,
+body > main > h4,
+body > main > h5,
+body > main > h6 {
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: center;
 }
 
-main > figure {
+body > main figure {
   position: relative;
   width: 960px;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-main > figure figcaption {
+body > main figcaption {
   position: absolute;
   top: 100%;
   right: 0;
@@ -190,7 +193,7 @@ main > figure figcaption {
   color: #1897ff;
 }
 
-main > figure figcaption::before {
+body > main figcaption::before {
   position: absolute;
   left: -1em;
   content: '↑ ';
@@ -203,24 +206,24 @@ main > figure figcaption::before {
     sans-serif;
 }
 
-main > figure + p {
+body > main figure + p {
   position: relative;
   left: -160px;
   max-width: 640px;
 }
 
-main > figure.full-width {
+body > main figure.full-width {
   width: 100vw;
   max-width: 100%;
   margin: 40px -20px;
 }
 
-main > figure.full-width + p {
+body > main figure.full-width + p {
   position: static;
   max-width: 960px;
 }
 
-main > figure.full-width img {
+body > main figure.full-width img {
   border-radius: 0;
 }
 
@@ -279,7 +282,7 @@ main > figure.full-width img {
   flex-wrap: nowrap;
 }
 
-.gallery-row > figure {
+.gallery-row figure {
   width: 100%;
   min-width: 0;
   padding: 10px;
@@ -307,54 +310,90 @@ main > figure.full-width img {
   list-style: none;
 }
 
-.list-view-card {
+.list-view-entry {
   position: relative;
   z-index: 10;
+  transition: z-index 0.5s cubic-bezier(0, 1, 1, 0);
+}
+
+.list-view-entry:hover,
+.list-view-entry:focus-within {
+  z-index: 100;
+  transition: z-index 0.5s cubic-bezier(0, 1, 1, 0);
+}
+
+.list-view-card {
   display: inline-block;
   margin-bottom: 40px;
   color: var(--accent-fg);
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .list-view-card.has-thumbnail {
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.3s cubic-bezier(0.83, 0, 0.17, 1), z-index 0.3s cubic-bezier(0, 1, 1, 0);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .list-view-card.has-thumbnail a[href] {
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .list-view-card a[href] {
   color: var(--accent-fg);
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .list-view-card-thumbnail {
-  position: fixed;
+  position: absolute;
   z-index: -1;
-  top: 60px;
-  right: 40px;
-  bottom: 60px;
-  left: 40px;
+  top: -160px;
+  right: -60px;
+  bottom: -100px;
+  left: -60px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
-  filter: grayscale(0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.83, 0, 0.17, 1), transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-.list-view-card.has-thumbnail:hover {
-  z-index: 100;
+.list-view-card-thumbnail::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-bg);
+  content: '';
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  transition: background 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-card.has-thumbnail:hover,
+.list-view-card.has-thumbnail:focus-within {
   text-shadow: 1px 1px 0 var(--accent-bg), -1px -1px 0 var(--accent-bg), -1px 1px 0 var(--accent-bg), 1px -1px 0 var(--accent-bg);
-  transition: color 0.3s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: color 0.5s cubic-bezier(0.83, 0, 0.17, 1), text-shadow 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-.list-view-card.has-thumbnail:hover .list-view-card-thumbnail {
-  opacity: 0.6;
-  transition: opacity 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+.list-view-card.has-thumbnail:hover .list-view-card-thumbnail,
+.list-view-card.has-thumbnail:focus-within .list-view-card-thumbnail {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s cubic-bezier(0.83, 0, 0.17, 1), transform 0.5s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.list-view-entry:first-child .list-view-card-thumbnail {
+  top: -100px;
+  bottom: -160px;
+}
+
+.list-view-entry:last-child .list-view-card-thumbnail {
+  top: -220px;
+  bottom: -40px;
 }
 
 .menu-bar {
@@ -404,17 +443,17 @@ main > figure.full-width img {
 
 .menu-bar-logo-petals {
   fill: #f35b04;
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .menu-bar-logo-ring {
   fill: #f7b801;
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .menu-bar-logo-centre {
   fill: #3d348b;
-  transition: fill 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: fill 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .menu-bar-logo:focus .menu-bar-logo-petals,
@@ -451,17 +490,17 @@ main > figure.full-width img {
 }
 
 @media screen and (max-width: 1020px) {
-  main > figure {
+  body > main figure {
     width: 100vw;
     margin-right: -20px;
     margin-left: -20px;
   }
 
-  main > figure img {
+  body > main figure img {
     border-radius: 0;
   }
 
-  main > figure figcaption {
+  body > main figcaption {
     position: static;
     max-width: 100%;
     margin-top: 10px;
@@ -469,13 +508,13 @@ main > figure.full-width img {
     margin-left: 20px;
   }
 
-  main > figure figcaption::before {
+  body > main figcaption::before {
     position: static;
   }
 
-  main > figure + p {
+  body > main figure + p {
     position: static;
-    max-width: 960px;
+    max-width: 100%;
   }
 
   .gallery {
@@ -486,12 +525,12 @@ main > figure.full-width img {
     display: block;
   }
 
-  .gallery-row > figure {
+  .gallery-row figure {
     width: 100vw;
     padding: 0 0 20px 0;
   }
 
-  .gallery-row > figure img {
+  .gallery-row figure img {
     border-radius: 0;
   }
 }

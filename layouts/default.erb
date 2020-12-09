@@ -35,7 +35,7 @@
     </div>
     <% end %>
   </header>
-  <main>
+  <main <% if page?(@item) or post?(@item) %>class="article"<% end %>>
     <%= yield %>
   </main>
   <% if not page?(@item) and not post?(@item) %>
